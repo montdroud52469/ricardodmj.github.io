@@ -1,293 +1,266 @@
 <!DOCTYPE html>
-    <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="es">
 
-        <!--=============== FAVICON ===============-->
-        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
-        
-        <!--=============== REMIX ICONS ===============-->
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
-        <title>Portafolio RDMJ</title>
-    </head>
-    <body>
-        <!--=============== HEADER ===============-->
-        <header class="profile container">
-            <!-- Theme button -->
-            <i class="ri-moon-line change-theme" id="theme-button"></i>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
-            <div class="profile__container grid">
-                <div class="profile__data">
-                    <div class="profile__border">
-                        <div class="profile__perfil">
-                            <!-- Insert your image, according to the example size of the portfolio -->
-                            <img src="assets/img/perfil.png" alt="">
-                        </div>
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <title>Portafolio | Ricardo Daniel Montiel</title>
+</head>
+
+<body>
+    <header class="profile container">
+        <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+        <div class="profile__container grid">
+            <div class="profile__data">
+                <div class="profile__border">
+                    <div class="profile__perfil">
+                        <img src="assets/img/perfil.png" alt="Foto de perfil de Ricardo Daniel">
                     </div>
-
-                    <h2 class="profile__name">Ricardo Daniel Montiel Jacinto</h2>
-                    <h3 class="profile__profession">Ingeniero en Computacion - Desarrollador de Software</h3>
-
-                    <ul class="profile__social">
-                        <a href="https://www.instagram.com/montdroud52468" target="_blank" class="profile__social-link">
-                            <i class="ri-instagram-line"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/ricardo-daniel-montiel-jacinto-b5505a213/" target="_blank" class="profile__social-link">
-                            <i class="ri-linkedin-box-line"></i>
-                        </a>
-                        <a href="https://github.com/montdroud52468" target="_blank" class="profile__social-link">
-                            <i class="ri-github-line"></i>
-                        </a>
-                    </ul>
                 </div>
-                <div class="profile__info-grid">
-                    <div class="profile__info-group">
-                        <h3 class="profile__info-number">Universidad Autónoma del Estado de México</h3>
-                        <p class="profile__info-description">
-                            Agosto del 2016 <br> Diciembre del 2021
+
+                <h2 class="profile__name">Ricardo Daniel Montiel Jacinto</h2>
+                <h3 class="profile__profession">Ingeniero en Computación - Desarrollador de Software</h3>
+
+                <ul class="profile__social">
+                    <a href="https://www.instagram.com/montdroud52468" target="_blank" class="profile__social-link">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ricardo-daniel-montiel-jacinto-b5505a213/" target="_blank"
+                        class="profile__social-link">
+                        <i class="ri-linkedin-box-line"></i>
+                    </a>
+                    <a href="https://github.com/montdroud52468" target="_blank" class="profile__social-link">
+                        <i class="ri-github-line"></i>
+                    </a>
+                </ul>
+            </div>
+
+            <div class="profile__info-grid">
+                <div class="profile__info-group">
+                    <h3 class="profile__info-number">Universidad Autónoma del Estado de México</h3>
+                    <p class="profile__info-description">
+                        Agosto 2016 - Diciembre 2021
+                    </p>
+                </div>
+            </div>
+
+            <div class="profile__buttons">
+                <a download="" href="assets/cv/CV_Ricardo_Daniel_Montiel_Jacinto.pdf" class="button">
+                    Descargar CV <i class="ri-download-line"></i>
+                </a>
+
+                <div class="profile__buttons-small">
+                    <a href="https://api.whatsapp.com/send?phone=+5215565233381&text=Hola Ricardo, estoy interesado en tu perfil puedes contactarme por:
+                    " target="_blank" class="button button__small button__gray">
+                        <i class="ri-whatsapp-line"></i>
+                    </a>
+                    <a href="https://m.me/ricardodaniel.montiejacinto" target="_blank"
+                        class="button button__small button__gray">
+                        <i class="ri-messenger-line"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="filters container">
+            <ul class="filters__content">
+                <button class="filters__button filter-tab-active" data-target="#info" style="white-space: nowrap;">
+                    Más de mí
+                </button>
+                <button class="filters__button" data-target="#projects">
+                    Proyectos
+                </button>
+                <button class="filters__button" data-target="#skills">
+                    Habilidades
+                </button>
+            </ul>
+
+            <div class="projects__content grid filters__active" data-content id="info"
+                style="grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                <article class="projects__card"
+                    style="grid-column: 1 / -1; text-align: center; display: flex; flex-direction: column; align-items: center;">
+                    <h3 class="projects__title">Sobre mí</h3>
+
+                    <div class="projects__description" style="max-width: 600px; margin: 0 auto;">
+                        <p style="text-align: center;">
+                            <b>¿Cómo sabe una app que acabas de presionar un botón?</b> Esa pregunta fue el motor que me
+                            llevó a estudiar
+                            <b>Ingeniería en Computación en la UAEMéx</b>. Desde la preparatoria, mi fascinación por la
+                            tecnología no ha dejado de crecer.
+                        </p>
+                        <br>
+                        <p style="text-align: center;">
+                            Hoy, entiendo que el código es la herramienta para materializar cualquier idea. Me
+                            especializo en crear experiencias digitales que conectan dispositivos y facilitan la vida
+                            diaria. Mi meta es clara: aportar mi visión y talento en las grandes ligas de la tecnología.
                         </p>
                     </div>
-                </div>
-                <div class="profile__buttons">
-                    <!-- Insert your CV -->
-                    <a download="" href="assets/cv/CV_Ricardo_Daniel_Montiel_Jacinto.pdf" class="button">
-                        Descargar CV <i class="ri-download-line"></i>
-                    </a>
+                </article>
+            </div>
 
-                    <div class="profile__buttons-small">
-                        <!-- Insert a real number plus country code -->
-                        <a href="https://api.whatsapp.com/send?phone=+5215565233381&text=Hola" target="_blank" class="button button__small button__gray">
-                            <i class="ri-whatsapp-line"></i>
-                        </a>
-                        <!-- Insert your brand name or profile -->
-                        <a href="https://m.me/montdroud52468" target="_blank" class="button button__small button__gray">
-                            <i class="ri-messenger-line"></i>
-                        </a>
+            <div class="projects__content grid" data-content id="projects">
+                <article class="projects__card">
+                    <h3 class="projects__title">Farmacias del Ahorro 2024-2025</h3>
+                    <img src="assets/img/project1.png" alt="Cuenta Monedero" class="projects__img">
+                    <div class="projects__modal">
+                        <div>
+                            <span class="projects__subtitle">Android Studio (Kotlin y Java)</span>
+                            <p class="projects__description">App bancaria para farmacias: Arquitectura MVVM con LiveData
+                                y DataBinding. Consumo REST mediante Retrofit y gestión eficiente con patrones
+                                Singleton.</p>
+                            <span class="projects__subtitle">Empresa: IDS Comercial (Consultora)</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="projects__card">
+                    <h3 class="projects__title">Walmart 2023-2024</h3>
+                    <img src="assets/img/project3.png" alt="Enciende tu proposito" class="projects__img">
+                    <div class="projects__modal">
+                        <div>
+                            <span class="projects__subtitle">Android Studio (Kotlin)</span>
+                            <p class="projects__description">Plataforma de préstamo de inmuebles accesibles. Programada
+                                desde cero usando MVP, Retrofit y Dagger Hilt. Gestión eficiente de estados y servicios
+                                mediante Singletons.</p>
+                            <span class="projects__subtitle">Empresa: IDS Comercial (Consultora)</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="projects__card">
+                    <h3 class="projects__title">Algoritmos de Aptitud</h3>
+                    <img src="assets/img/project2.png" alt="Proyecto Algoritmos" class="projects__img">
+                    <div class="projects__modal">
+                        <div>
+                            <span class="projects__subtitle">Android Studio (Java)</span>
+                            <p class="projects__description">Sistema de comparación de cadenas aleatorias para encontrar
+                                resultados óptimos.</p>
+                            <a href="https://github.com/montdroud52468/Aptitudes"
+                                class="projects__button button button__small">
+                                <i class="ri-link"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="projects__card">
+                    <h3 class="projects__title">Videojuego 3D</h3>
+                    <img src="assets/img/project4.png" alt="Proyecto Videojuego" class="projects__img">
+                    <div class="projects__modal">
+                        <div>
+                            <span class="projects__subtitle">Unity 3D (C#)</span>
+                            <p class="projects__description">Desarrollo de animaciones y mecánicas de personaje.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="skills__content grid" data-content id="skills">
+                <div class="skills__area">
+                    <h3 class="skills__title">Desarrollo Frontend / Mobile</h3>
+                    <div class="skills__box">
+                        <div class="skills__group">
+                            <div class="skills__data">
+                                <i class="ri-checkbox-circle-line"></i>
+                                <div>
+                                    <h3 class="skills__name">Kotlin</h3><span class="skills__level">Avanzado</span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <i class="ri-checkbox-circle-line"></i>
+                                <div>
+                                    <h3 class="skills__name">Java</h3><span class="skills__level">Intermedio</span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <i class="ri-checkbox-circle-line"></i>
+                                <div>
+                                    <h3 class="skills__name">Jetpack Compose</h3><span
+                                        class="skills__level">Intermedio</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skills__group">
+                            <div class="skills__data">
+                                <i class="ri-checkbox-circle-line"></i>
+                                <div>
+                                    <h3 class="skills__name">MVVM / Flow</h3><span
+                                        class="skills__level">Intermedio</span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <i class="ri-checkbox-circle-line"></i>
+                                <div>
+                                    <h3 class="skills__name">API REST</h3><span class="skills__level">Intermedio</span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <i class="ri-checkbox-circle-line"></i>
+                                <div>
+                                    <h3 class="skills__name">Git</h3><span class="skills__level">Intermedio</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills__area">
+                    <h3 class="skills__title">Desarrollo Backend</h3>
+                    <div class="skills__box">
+                        <div class="skills__group">
+                            <div class="skills__data">
+                                <i class="ri-checkbox-circle-line"></i>
+                                <div>
+                                    <h3 class="skills__name">MySQL</h3><span class="skills__level">Intermedio</span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <i class="ri-checkbox-circle-line"></i>
+                                <div>
+                                    <h3 class="skills__name">PHP</h3><span class="skills__level">Intermedio</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skills__group">
+                            <div class="skills__data">
+                                <i class="ri-checkbox-circle-line"></i>
+                                <div>
+                                    <h3 class="skills__name">Firebase</h3><span class="skills__level">Intermedio</span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <i class="ri-checkbox-circle-line"></i>
+                                <div>
+                                    <h3 class="skills__name">Python</h3><span class="skills__level">Básico</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </header>
+            </div>
+        </section>
+    </main>
 
-        <!--=============== MAIN ===============-->
-        <main class="main">
-            <section class="filters container">
-                <!--=============== FILTERS TABS ===============-->
-                <ul class="filters__content">
-                    <button class="filters__button filter-tab-active" data-target="#projects">
-                        Proyectos
-                    </button>
-                    <button class="filters__button" data-target="#skills">
-                        Habilidades
-                    </button>
-                </ul>
+    <footer class="footer container">
+        <span class="footer__copy">
+            &#169; Ultima modificacion 17/03/2026
+        </span>
+    </footer>
 
-                <div class="filters__sections">
-                    <!--=============== PROJECTS ===============-->
-                    
+    <script src="assets/js/scrollreveal.min.js"></script>
 
-                    <div class="projects__content grid filters__active" data-content id="projects">
-                        <article class="projects__card">
-                            <h3 class="Proyects__title">Proyectos Android studio</h3>
-                            <!-- Insert your image in a rectangular format (Ex: 600 x 400, 1000 x 800, 1200 x 1000, etc) -->
-                            <img src="assets/img/project1.png" alt="" class="projects__img">
-                            <div class="projects__modal">
-                                <div>
-                                    <h3 class="projects__title">Recordatorios </h3>
-                                    <span class="projects__subtitle">Android Studio Java</span>
-                                    <p class="projects__description">Aplicación que te ayudara a llevar un control en tus medicamentos.</p>
-                                    <span class="projects__subtitle">En desarrollo</span>
-                                    <a href="https://github.com/montdroud52468/MedIme" class="projects__button button button__small">
-                                        <i class="ri-link"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
+    <script src="assets/js/main.js"></script>
+</body>
 
-                        <article class="projects__card">
-                            <h3 class="Proyects__title">Proyectos en Unity 3D con Arduino</h3>
-                            <!-- Insert your image in a rectangular format (Ex: 600 x 400, 1000 x 800, 1200 x 1000, etc) -->
-                            <img src="assets/img/project3.png" alt="" class="projects__img">
-                            <div class="projects__modal">
-                                <div>
-                                    <h3 class="projects__title">Terapia de mano</h3>
-                                    <span class="projects__subtitle">Unity y Arduino C#</span>
-                                    <p class="projects__description">Se crea una simulacion de una mano con Unity, y con ayuda de Arduino usaremos unos giroscopios para monitorear el movimiento de la persona en terapia.</p>
-                                    <a href="https://github.com/montdroud52468/Mano-Unity-Arduino" class="projects__button button button__small">
-                                        <i class="ri-link"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="projects__card">
-                            <!-- Insert your image in a rectangular format (Ex: 600 x 400, 1000 x 800, 1200 x 1000, etc) -->
-                            <img src="assets/img/project2.png" alt="" class="projects__img">
-                            <div class="projects__modal">
-                                <div>
-                                    <h3 class="projects__title">Aptitudes</h3>
-                                    <span class="projects__subtitle">Android Studio Java</span>
-                                    <p class="projects__description">Verifica que cadena aleatoria tiene mas aptitud con cadena original y tomara la de mejor resultado.</p>
-                                    <a href="https://github.com/montdroud52468/Aptitudes" class="projects__button button button__small">
-                                        <i class="ri-link"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="projects__card">
-                            <!-- Insert your image in a rectangular format (Ex: 600 x 400, 1000 x 800, 1200 x 1000, etc) -->
-                            <img src="assets/img/project4.png" alt="" class="projects__img">
-                            <div class="projects__modal">
-                                <div>
-                                    <span class="projects__subtitle">Video Juego</span>
-                                    <h3 class="projects__title">Unity 3D C#</h3>
-                                    <p class="projects__description">Animaciones del personaje, y acciones de este</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-
-                    </div>
-
-                    <!--=============== HABILIDADES ===============-->
-                    <div class="skills__content grid" data-content id="skills">
-                        <div class="skills__area">
-                            <h3 class="skills__title">Desarrollador Frontend</h3>
-    
-                            <div class="skills__box">
-                                <div class="skills__group">
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-        
-                                        <div>
-                                            <h3 class="skills__name">HTML</h3>
-                                            <span class="skills__level">Basico</span>
-                                        </div>
-                                    </div>
-        
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-        
-                                        <div>
-                                            <h3 class="skills__name">CSS</h3>
-                                            <span class="skills__level">Basico</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="skills__group">
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-        
-                                        <div>
-                                            <h3 class="skills__name">React</h3>
-                                            <span class="skills__level">Intermedio</span>
-                                        </div>
-                                    </div>
-        
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-        
-                                        <div>
-                                            <h3 class="skills__name">Git</h3>
-                                            <span class="skills__level">Intermedio</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="skills__area">
-                            <h3 class="skills__title">Desarrollador Backend</h3>
-    
-                            <div class="skills__box">
-                                <div class="skills__group">
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-        
-                                        <div>
-                                            <h3 class="skills__name">PHP</h3>
-                                            <span class="skills__level">Intermedio</span>
-                                        </div>
-                                    </div>
-        
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-        
-                                        <div>
-                                            <h3 class="skills__name">MySQL</h3>
-                                            <span class="skills__level">Advanzado</span>
-                                        </div>
-                                    </div>
-        
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-        
-                                        <div>
-                                            <h3 class="skills__name">Firebase</h3>
-                                            <span class="skills__level">Intermedio</span>
-                                        </div>
-                                    </div>
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-        
-                                        <div>
-                                            <h3 class="skills__name">kotlin</h3>
-                                            <span class="skills__level">Basico</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="skills__group">
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-        
-                                        <div>
-                                            <h3 class="skills__name">Python</h3>
-                                            <span class="skills__level">Basico</span>
-                                        </div>
-                                    </div>
-        
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-        
-                                        <div>
-                                            <h3 class="skills__name">Java</h3>
-                                            <span class="skills__level">Intermedio</span>
-                                        </div>
-                                    </div>
-                                    <div class="skills__data">
-                                        <i class="ri-checkbox-circle-line"></i>
-        
-                                        <div>
-                                            <h3 class="skills__name">C/C++/C#</h3>
-                                            <span class="skills__level">Intermedio</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!--=============== FOOTER ===============-->
-        <footer class="footer container">
-            <span class="footer__copy">
-                
-            </span>
-        </footer>
-
-        <!--=============== SCROLLREVEAL ===============-->
-        <script src="assets/js/scrollreveal.min.js"></script>
-            
-        <!--=============== MAIN JS ===============-->
-        <script src="assets/js/main.js"></script>
-    </body>
 </html>
