@@ -12,11 +12,17 @@
       Teal: hsl(174, 63%, 62%)
   */
 
-  --hue: 207;
-  --sat: 90%;
-  --lig: 61%;
+  --hue: 356;
+  --sat: 75%;
+  /* Ajustamos un poco la saturación para el rojo */
+  --lig: 55%;
+  /* Ajustamos la luminosidad */
+
   --first-color: hsl(var(--hue), var(--sat), var(--lig));
-  --first-color-alt: hsl(var(--hue), var(--sat), 57%); /* -4% */
+  --first-color-alt: hsl(var(--hue), var(--sat), 51%);
+  /* -4% del original */
+
+  /* El resto de las variables se actualizarán automáticamente */
   --title-color: hsl(var(--hue), 12%, 15%);
   --text-color: hsl(var(--hue), 12%, 45%);
   --text-color-light: hsl(var(--hue), 8%, 75%);
@@ -56,10 +62,13 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
-  transition: .3s; /* For animation dark mode */
+  transition: .3s;
+  /* For animation dark mode */
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: var(--title-color);
   font-weight: 600;
 }
@@ -94,6 +103,8 @@ img {
 
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
+  --hue: 356;
+  /* Asegúrate de que coincida con el root */
   --title-color: hsl(var(--hue), 12%, 95%);
   --text-color: hsl(var(--hue), 12%, 75%);
   --body-color: hsl(var(--hue), 40%, 8%);
@@ -158,18 +169,25 @@ body.dark-theme {
 .profile__perfil {
   width: 100px;
   height: 100px;
-  background: linear-gradient(180deg, 
-              hsla(var(--hue), var(--sat), var(--lig), 1) 0%, 
-              hsla(var(--hue), var(--sat), var(--lig), .2) 100%);
+  /* El degradado ahora es rojo según lo que pediste */
+  background: linear-gradient(180deg,
+      hsla(0, 90%, 61%, 1) 0%,
+      hsla(0, 90%, 61%, .2) 100%);
   border-radius: 50%;
   overflow: hidden;
   display: flex;
-  align-items: flex-end;
   justify-content: center;
+
 }
 
 .profile__perfil img {
-  width: 75px;
+  width: 100%;
+  /* Obliga a la imagen a llenar el ancho */
+  height: 100%;
+  /* Obliga a la imagen a llenar el alto */
+  object-fit: cover;
+  /* Este es tu centerCrop */
+  object-position: center;
 }
 
 .profile__border {
@@ -235,7 +253,7 @@ body.dark-theme {
   font-weight: 500;
 }
 
-.profile__buttons, 
+.profile__buttons,
 .profile__buttons-small {
   display: flex;
   align-items: center;
@@ -333,16 +351,16 @@ body.dark-theme {
   height: 100%;
   bottom: -100%;
   left: 0;
-  background: linear-gradient(180deg, 
-              hsla(var(--hue), 24%, 40%, .3) 0%, 
-              hsla(var(--hue), 24%, 4%, 1) 95%);
+  background: linear-gradient(180deg,
+      hsla(var(--hue), 24%, 40%, .3) 0%,
+      hsla(var(--hue), 24%, 4%, 1) 95%);
   display: grid;
   align-items: flex-end;
   padding: 1.5rem 1.25rem;
   transition: .3s;
 }
 
-.projects__subtitle, 
+.projects__subtitle,
 .projects__title {
   color: #fff;
 }
@@ -463,6 +481,7 @@ body.dark-theme {
   .profile__info {
     column-gap: 1.5rem;
   }
+
   .profile__buttons {
     flex-direction: column;
     row-gap: 1rem;
@@ -481,12 +500,25 @@ body.dark-theme {
   }
 
   .filters__content {
-    width: 332px;
-    margin: 3rem auto;
+    margin: 2rem auto;
+    /* Centra el contenedor horizontalmente */
+    background-color: var(--text-color-lighten);
+    padding: .375rem;
+    border-radius: .75rem;
+    display: flex;
+    /* Usamos flex para que los botones se alineen uno tras otro */
+    column-gap: .5rem;
+
+    /* ESTA ES LA CLAVE */
+    width: max-content;
+    /* El ancho será exactamente lo que sumen los botones */
+    max-width: 95%;
+    /* Evita que se salga de la pantalla en celulares pequeños */
   }
 }
 
 @media screen and (min-width: 776px) {
+
   .projects__content,
   .skills__content {
     grid-template-columns: repeat(2, 332px);
@@ -513,27 +545,34 @@ body.dark-theme {
   .profile {
     padding-top: 4rem;
   }
+
   .profile__border {
     width: 135px;
     height: 135px;
     margin-bottom: 1rem;
   }
+
   .profile__perfil {
     width: 120px;
     height: 120px;
   }
+
   .profile__perfil img {
     width: 90px;
   }
+
   .profile__profession {
     margin-bottom: 1.5rem;
   }
+
   .profile__info {
     column-gap: 3rem;
   }
+
   .profile__info-description {
     font-size: var(--small-font-size);
   }
+
   .profile__buttons {
     column-gap: 2rem;
   }
@@ -541,6 +580,7 @@ body.dark-theme {
   .projects__content {
     gap: 2rem 3rem;
   }
+
   .projects__modal {
     padding: 1.5rem;
   }
@@ -552,5 +592,27 @@ body.dark-theme {
 
   .footer__copy {
     margin: 4.5rem 0 2.5rem;
+  }
+
+  /* Definición de la animación de deslizamiento */
+  @keyframes slideLeft {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+      /* Empieza 50px a la derecha */
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+      /* Termina en su posición original */
+    }
+  }
+
+  /* Aplicar la animación cuando la pestaña se activa */
+  .filters__active[data-content] {
+    display: grid;
+    animation: slideLeft 0.5s ease-out;
+    /* Duración de 0.5 segundos */
   }
 }
