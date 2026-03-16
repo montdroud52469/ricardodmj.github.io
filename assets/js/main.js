@@ -92,7 +92,7 @@ function cargarCertificados() {
             <h3 class="projects__title">${cert.titulo}</h3>
 
             <div class="projects__pdf-ratio-container">
-                <iframe src="assets/certificados/diploma-algoritmos-python.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                <iframe src="./assets/certificados/diploma-algoritmos-python.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
                     class="projects__pdf-embed" frameborder="0" scrolling="no">
                 </iframe>
             </div>
@@ -104,11 +104,11 @@ function cargarCertificados() {
                     <span class="projects__subtitle">Plataforma: Platzi</span>
 
                     <div class="projects__buttons">
-                        <a href="assets/certificados/${cert.archivo}" target="_blank"
+                        <a href="./assets/certificados/${cert.archivo}" target="_blank"
                             class="projects__button button button__small">
                             <i class="ri-fullscreen-line"></i>
                         </a>
-                        <a href="assets/certificados/${cert.archivo}" download
+                        <a href="./assets/certificados/${cert.archivo}" download
                             class="projects__button button button__small">
                             <i class="ri-download-2-line"></i>
                         </a>
