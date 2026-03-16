@@ -92,7 +92,7 @@ function cargarCertificados() {
             <h3 class="projects__title">${cert.titulo}</h3>
 
             <div class="projects__pdf-ratio-container">
-                <iframe src="./assets/certificados/${cert.archivo}#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                <iframe src="https://docs.google.com/viewer?url=https://montdroud52469.github.io/ricardodmj.github.io/assets/certificados/${cert.archivo}&embedded=true"
                     class="projects__pdf-embed" frameborder="0" scrolling="no">
                 </iframe>
             </div>
