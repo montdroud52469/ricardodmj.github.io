@@ -500,20 +500,22 @@ body.dark-theme {
   }
 
   .filters__content {
-    margin: 2rem auto;
-    /* Centra el contenedor horizontalmente */
-    background-color: var(--text-color-lighten);
-    padding: .375rem;
-    border-radius: .75rem;
     display: flex;
-    /* Usamos flex para que los botones se alineen uno tras otro */
-    column-gap: .5rem;
+    justify-content: center;
+    column-gap: 0.5rem;
+    background-color: var(--container-color);
+    padding: 0.35rem;
+    border-radius: 0.75rem;
+    /* Esto permite que si no caben, se mantengan en una línea con scroll */
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 
-    /* ESTA ES LA CLAVE */
-    width: max-content;
-    /* El ancho será exactamente lo que sumen los botones */
-    max-width: 95%;
-    /* Evita que se salga de la pantalla en celulares pequeños */
+  .filters__button {
+    width: auto;
+    /* Que el botón mida lo que mide el texto */
+    padding: 0.75rem;
+    font-size: var(--small-font-size);
   }
 }
 
@@ -619,21 +621,19 @@ body.dark-theme {
   .projects__pdf-ratio-container {
     position: relative;
     width: 100%;
-    padding-top: 71%; /* Ajusta según la forma de tu certificado */
+    padding-top: 71%;
     border-radius: .5rem;
-    overflow: hidden; /* ESTO ES CLAVE: esconde lo que sobra (incluyendo la barra) */
-}
+    overflow: hidden;
+    background-color: var(--container-color);
+  }
 
-.projects__pdf-embed {
+  .projects__pdf-embed {
     position: absolute;
     top: 0;
     left: 0;
-    
-    /* Hacemos el iframe ligeramente más ancho para sacar la barra del área visible */
-    width: 105%; 
+    width: 105%;
     height: 100%;
-    
     border: none;
-    pointer-events: none; /* Evita que el usuario haga scroll accidentalmente dentro del PDF */
-}
+    pointer-events: none;
+  }
 }
