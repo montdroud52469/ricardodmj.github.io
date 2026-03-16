@@ -615,4 +615,25 @@ body.dark-theme {
     animation: slideLeft 0.5s ease-out;
     /* Duración de 0.5 segundos */
   }
+
+  .projects__pdf-ratio-container {
+    position: relative;
+    width: 100%;
+    padding-top: 71%; /* Ajusta según la forma de tu certificado */
+    border-radius: .5rem;
+    overflow: hidden; /* ESTO ES CLAVE: esconde lo que sobra (incluyendo la barra) */
+}
+
+.projects__pdf-embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    /* Hacemos el iframe ligeramente más ancho para sacar la barra del área visible */
+    width: 105%; 
+    height: 100%;
+    
+    border: none;
+    pointer-events: none; /* Evita que el usuario haga scroll accidentalmente dentro del PDF */
+}
 }
