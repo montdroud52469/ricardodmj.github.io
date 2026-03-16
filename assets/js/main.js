@@ -79,8 +79,10 @@ const certificados = [
 ];
 
 // 2. Función para renderizar (Como el onBindViewHolder)
+/*=============== CARGAR CERTIFICADOS ===============*/
 function cargarCertificados() {
     const contenedor = document.getElementById('certf');
+    if (!contenedor) return; // Seguridad: si no existe el ID, no hace nada
 
     certificados.forEach(cert => {
         const article = document.createElement('article');
@@ -98,7 +100,7 @@ function cargarCertificados() {
             <div class="projects__modal">
                 <div>
                     <span class="projects__subtitle">${cert.subtitulo}</span>
-                    <p class="projects__description">${cert.descripcion}</p>
+                    <p class="projects__description">Certificación oficial de Platzi cubriendo los conocimientos de ${cert.titulo.toLowerCase()}.</p>
                     <span class="projects__subtitle">Plataforma: Platzi</span>
 
                     <div class="projects__buttons">
@@ -117,6 +119,9 @@ function cargarCertificados() {
         contenedor.appendChild(article);
     });
 }
+
+// Ejecutar al cargar la página
+document.addEventListener('DOMContentLoaded', cargarCertificados);
 
 // Ejecutar al cargar la página
 document.addEventListener('DOMContentLoaded', cargarCertificados);
