@@ -89,7 +89,7 @@ function cargarCertificados() {
         article.className = 'projects__card';
 
         article.innerHTML = `
-            <h3 class="projects__title">${cert.titulo}</h3>
+            <h3 class="projects__description">${cert.titulo}</h3>
 
             <div class="projects__pdf-ratio-container">
                 <iframe src="https://docs.google.com/viewer?url=https://montdroud52469.github.io/ricardodmj.github.io/assets/certificados/${cert.archivo}&embedded=true"
@@ -100,7 +100,7 @@ function cargarCertificados() {
             <div class="projects__modal">
                 <div>
                     <span class="projects__subtitle">${cert.subtitulo}</span>
-                    <p class="projects__description">Certificación oficial de Platzi cubriendo los conocimientos de ${cert.titulo.toLowerCase()}.</p>
+                    <p class="projects__subtitle">Certificación oficial de Platzi cubriendo los conocimientos de ${cert.titulo.toLowerCase()}.</p>
                     <span class="projects__subtitle">Plataforma: Platzi</span>
 
                     <div class="projects__buttons">
