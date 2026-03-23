@@ -124,7 +124,7 @@ function cargarCertificados() {
 const proyectos = [
     {
         "titulo": "Dulce Tentación: Catálogo Digital de Alta Disponibilidad 2",
-        "imagen": "assets/img/dulce_tentacion_preview.png", 
+        "imagen": "./assets/img/dulce_tentacion_preview.png", 
         "tecnologias": "Android Studio (Kotlin), Jetpack Compose, Retrofit 2.11, OkHttp3",
         "descripcion": "Sistema de gestión de inventarios con arquitectura MVVM moderna. Implementación de UI declarativa con Compose, navegación Type-Safe con Serialización y consumo de API REST con interceptores de logging y manejo dinámico de imágenes Base64.",
         "empresa": "Proyecto Independiente / Desarrollo Profesional",
@@ -132,7 +132,7 @@ const proyectos = [
     },
     {
         titulo: "Dulce Tentación: Arquitectura y Consumo REST",
-        imagen: "assets/img/dulce_tentacion_preview1.png", 
+        imagen: "./assets/img/dulce_tentacion_preview1.png", 
         tecnologias: "Android SDK (XML), Kotlin, MVVM, ViewBinding, Retrofit",
         descripcion: "Proyecto enfocado en la implementación sólida de la arquitectura MVVM. Practiqué la separación de capas mediante el uso de LiveData y ViewBinding, optimizando la comunicación con el servidor a través de Retrofit y el mapeo de modelos JSON.",
         empresa: "Proyecto de Especialización Técnica",
@@ -141,23 +141,23 @@ const proyectos = [
 
     {
         titulo: "Inventory API: Engine de Dulce Tentación",
-        imagen: "assets/img/project_server.png", 
+        imagen: "./assets/img/project_server.png", 
         tecnologias: "Python (Flask), SQLite3, REST API, Render (Deployment)",
         descripcion: "Infraestructura Backend robusta diseñada para la gestión de inventarios a gran escala. Implementé una arquitectura de microservicios mediante Blueprints, un sistema de manejo de errores centralizado y persistencia de datos relacional con SQLite. El servidor soporta transferencias de imágenes optimizadas en Base64 y una lógica de búsqueda avanzada con filtrado dinámico de stock.",
         empresa: "Proyecto Independiente / Fullstack Development",
         link: "https://github.com/Montdroud52468/MyCurseServer.git"
     },
     {
-        "titulo": "Solución Fintech: Ecosistema de Pagos y Lealtad",
-        "imagen": "assets/img/project_preview.png",
-        "tecnologias": "Android SDK (Java/Kotlin), Retrofit 2, OkHttp3, XML, ConstraintLayout.",
-        "descripcion": "Desarrollo de una aplicación financiera (Fintech) orientada al sector retail y farmacéutico. Implementación de arquitectura MVVM para la gestión de transacciones bancarias y monedero electrónico. Optimización de red mediante Retrofit y persistencia temporal de datos con Singletons para la gestión de sesión. Publicada exitosamente en Google Play Store bajo metodologías ágiles (SCRUM).",
-        "empresa": "IDS Comercial (Consultoría para Sector Retail/Bancario)",
-        "link": "" 
+        titulo: "Solución Fintech: Ecosistema de Pagos y Lealtad",
+        imagen: "./assets/img/project_preview.png",
+        tecnologias: "Android SDK (Java/Kotlin), Retrofit 2, OkHttp3, XML, ConstraintLayout.",
+        descripcion: "Desarrollo de una aplicación financiera (Fintech) orientada al sector retail y farmacéutico. Implementación de arquitectura MVVM para la gestión de transacciones bancarias y monedero electrónico. Optimización de red mediante Retrofit y persistencia temporal de datos con Singletons para la gestión de sesión. Publicada exitosamente en Google Play Store bajo metodologías ágiles (SCRUM).",
+        empresa: "IDS Comercial (Consultoría para Sector Retail/Bancario)",
+        link: "" 
     },
     {
         titulo: "GeoLocator: Visualización de Datos Geográficos",
-        imagen: "assets/img/project_maps.png", 
+        imagen: "./assets/img/project_maps.png", 
         tecnologias: "Kotlin, OSMDroid, Retrofit (JSON Parsing), MVVM",
         descripcion: "Desarrollé un sistema capaz de procesar archivos JSON para representar puntos de interés dinámicos sobre un mapa. Implementé lógica de filtrado por proximidad y visualización detallada mediante InfoWindows personalizadas. La app interpreta metadatos de cada ubicación (como disponibilidad de servicios o horarios) para adaptar la interfaz y los marcadores en tiempo real.",
         empresa: "Proyecto de Especialización Técnica",
@@ -165,7 +165,7 @@ const proyectos = [
     },
     {
         titulo: "Plataforma de Gestión de Activos (Retail)",
-        imagen: "assets/img/no_image.png",
+        imagen: "./assets/img/no_image.png",
         tecnologias: "Android Studio (Kotlin)",
         descripcion: "Colaboré en el desarrollo desde cero de una aplicación orientada a la economía circular y optimización de recursos para un cliente líder en Retail. Implementé arquitectura MVP para asegurar un código desacoplado, integrando Dagger Hilt para inyección de dependencias y Retrofit para el consumo de APIs REST eficientes.",
         empresa: "IDS Comercial (Consultora)",
@@ -173,7 +173,7 @@ const proyectos = [
     },
     {
         titulo: "IDS: Modernización y Ecosistema Mobile",
-        imagen: "assets/img/logo-ids.webp",
+        imagen: "./assets/img/logo-ids.webp",
         tecnologias: "Android Nativo (Kotlin/Java) & Flutter",
         descripcion: "Participé activamente en la reestructuración de la capa de datos, ejecutando la migración a Retrofit y optimizando el patrón Repository bajo supervisión técnica. Me encargué de la refactorización de lógica de negocio y la limpieza de deuda técnica en modelos de datos. Asimismo, me integré al desarrollo multiplataforma con Flutter, profesionalizando mi flujo de trabajo en equipos Scrum.",
         empresa: "IDS Comercial (Proyectos Internos)",
@@ -181,7 +181,7 @@ const proyectos = [
     },
     {
         titulo: "MedIme: Mi Primer Paso en Android",
-        imagen: "assets/img/no_image.png", 
+        imagen: "./assets/img/no_image.png", 
         tecnologias: "Java, Android SDK (Native)",
         descripcion: "Mi primer acercamiento al desarrollo móvil hace 3 años. Un proyecto fundamental que representa el inicio de mi carrera, donde exploré el manejo de Activities y componentes básicos de Android. Aunque carece de las arquitecturas limpias que utilizo hoy (como MVVM o MVP), es el testimonio de mi evolución técnica y mi capacidad de aprendizaje autodidacta.",
         empresa: "Iniciación",
