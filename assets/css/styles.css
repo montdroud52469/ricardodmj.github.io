@@ -221,14 +221,22 @@ body.dark-theme {
 
 /*=============== PROJECTS & CERTIFICADOS (REGLAS GLOBALES) ===============*/
 .projects__content {
-  grid-template-columns: 1fr; /* 1 columna en móvil */
+  display: grid;
+  grid-template-columns: 1fr;
   justify-content: center;
+  align-items: stretch; /* Esto hace que todas las tarjetas de la fila midan lo mismo */
+  gap: 1.5rem;
 }
 
 .projects__card {
   position: relative;
   border-radius: 1rem;
   overflow: hidden;
+  /* --- CAMBIO CLAVE 2 --- */
+  background-color: var(--container-color); /* Fondo oscuro base siempre visible */
+  display: flex; /* Añadimos flex */
+  flex-direction: column; /* Contenido uno sobre otro */
+  height: 100%; /* Para que ocupe todo el alto del grid */
 }
 
 .projects__pdf-ratio-container {
@@ -251,28 +259,51 @@ body.dark-theme {
 }
 
 .projects__modal {
-  position: absolute;
+  /* --- CAMBIO CLAVE 3 (El más importante) --- */
+  position: relative; /* <--- DEJAMOS de ser absolute */
   width: 100%;
-  height: 100%;
-  bottom: -100%;
+  max-height: 0; /* <--- Empieza oculto con altura 0 */
+  overflow: hidden; /* <--- Oculta el texto desbordado */
+  
+  bottom: 0; /* <--- Ya no necesitamos bottom -100% */
   left: 0;
-  background: linear-gradient(180deg, hsla(var(--hue), 24%, 40%, .3) 0%, hsla(var(--hue), 24%, 4%, 1) 95%);
-  display: grid;
-  align-items: flex-end;
-  padding: 1.5rem 1.25rem;
-  transition: .3s;
+  
+  /* Gradiente más oscuro para legibilidad */
+  background: linear-gradient(180deg, 
+              hsla(var(--hue), 24%, 40%, .2) 0%, 
+              hsla(var(--hue), 24%, 4%, .95) 85%);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  
+  /* Padding horizontal inicial, sin padding vertical */
+  padding: 0 1.25rem; 
+  
+  /* Animación suave de crecimiento */
+  transition: max-height 0.5s ease-out, padding 0.3s ease-out;
+  z-index: 10;
 }
 
-.projects__card:hover .projects__modal { bottom: 0; }
+.projects__card:hover .projects__modal { 
+  max-height: 1000px; /* <--- Una altura lo suficientemente grande para CUALQUIER texto */
+  padding: 1.5rem 1.25rem; /* <--- Activamos el padding vertical para que respire el texto */
+  bottom: 0;
+ }
 
 .projects__title {
   color: #fff;
   font-size: var(--h3-font-size);
   margin-bottom: .75rem;
+  line-height: 1.2; /* Ajusta el espacio entre líneas */
 }
 
-.projects__subtitle { color: #fff; font-size: var(--smaller-font-size); }
-
+.projects__subtitle {
+  color: #fff;
+  font-size: var(--smaller-font-size);
+  line-height: 1.4; /* Mejora lectura de parrafos largos */
+  margin-bottom: 1rem;
+}
 /*=============== SKILLS ===============*/
 .skills__content { row-gap: 3.5rem; }
 .skills__title { font-size: var(--h3-font-size); text-align: center; margin-bottom: 1.5rem; }

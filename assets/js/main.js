@@ -120,6 +120,118 @@ function cargarCertificados() {
     });
 }
 
+/*=============== DATA DE PROYECTOS ===============*/
+const proyectos = [
+    {
+        "titulo": "Dulce Tentación: Catálogo Digital de Alta Disponibilidad 2",
+        "imagen": "assets/img/dulce_tentacion_preview.png", 
+        "tecnologias": "Android Studio (Kotlin), Jetpack Compose, Retrofit 2.11, OkHttp3",
+        "descripcion": "Sistema de gestión de inventarios con arquitectura MVVM moderna. Implementación de UI declarativa con Compose, navegación Type-Safe con Serialización y consumo de API REST con interceptores de logging y manejo dinámico de imágenes Base64.",
+        "empresa": "Proyecto Independiente / Desarrollo Profesional",
+        "link": "https://github.com/Montdroud52468/DulceTen.git" 
+    },
+    {
+        titulo: "Dulce Tentación: Arquitectura y Consumo REST",
+        imagen: "assets/img/dulce_tentacion_preview1.png", 
+        tecnologias: "Android SDK (XML), Kotlin, MVVM, ViewBinding, Retrofit",
+        descripcion: "Proyecto enfocado en la implementación sólida de la arquitectura MVVM. Practiqué la separación de capas mediante el uso de LiveData y ViewBinding, optimizando la comunicación con el servidor a través de Retrofit y el mapeo de modelos JSON.",
+        empresa: "Proyecto de Especialización Técnica",
+        link: "https://github.com/Montdroud52468/MyCurse.git" 
+    },
+
+    {
+        titulo: "Inventory API: Engine de Dulce Tentación",
+        imagen: "assets/img/project_server.png", 
+        tecnologias: "Python (Flask), SQLite3, REST API, Render (Deployment)",
+        descripcion: "Infraestructura Backend robusta diseñada para la gestión de inventarios a gran escala. Implementé una arquitectura de microservicios mediante Blueprints, un sistema de manejo de errores centralizado y persistencia de datos relacional con SQLite. El servidor soporta transferencias de imágenes optimizadas en Base64 y una lógica de búsqueda avanzada con filtrado dinámico de stock.",
+        empresa: "Proyecto Independiente / Fullstack Development",
+        link: "https://github.com/Montdroud52468/MyCurseServer.git"
+    },
+    {
+        "titulo": "Solución Fintech: Ecosistema de Pagos y Lealtad",
+        "imagen": "assets/img/project_preview.png",
+        "tecnologias": "Android SDK (Java/Kotlin), Retrofit 2, OkHttp3, XML, ConstraintLayout.",
+        "descripcion": "Desarrollo de una aplicación financiera (Fintech) orientada al sector retail y farmacéutico. Implementación de arquitectura MVVM para la gestión de transacciones bancarias y monedero electrónico. Optimización de red mediante Retrofit y persistencia temporal de datos con Singletons para la gestión de sesión. Publicada exitosamente en Google Play Store bajo metodologías ágiles (SCRUM).",
+        "empresa": "IDS Comercial (Consultoría para Sector Retail/Bancario)",
+        "link": "" 
+    },
+    {
+        titulo: "GeoLocator: Visualización de Datos Geográficos",
+        imagen: "assets/img/project_maps.png", 
+        tecnologias: "Kotlin, OSMDroid, Retrofit (JSON Parsing), MVVM",
+        descripcion: "Desarrollé un sistema capaz de procesar archivos JSON para representar puntos de interés dinámicos sobre un mapa. Implementé lógica de filtrado por proximidad y visualización detallada mediante InfoWindows personalizadas. La app interpreta metadatos de cada ubicación (como disponibilidad de servicios o horarios) para adaptar la interfaz y los marcadores en tiempo real.",
+        empresa: "Proyecto de Especialización Técnica",
+        link: "https://github.com/Montdroud52468/Mapas-Android.git"
+    },
+    {
+        titulo: "Plataforma de Gestión de Activos (Retail)",
+        imagen: "assets/img/no_image.png",
+        tecnologias: "Android Studio (Kotlin)",
+        descripcion: "Colaboré en el desarrollo desde cero de una aplicación orientada a la economía circular y optimización de recursos para un cliente líder en Retail. Implementé arquitectura MVP para asegurar un código desacoplado, integrando Dagger Hilt para inyección de dependencias y Retrofit para el consumo de APIs REST eficientes.",
+        empresa: "IDS Comercial (Consultora)",
+        link: "" // Mantener vacío por acuerdos de confidencialidad (NDA)
+    },
+    {
+        titulo: "IDS: Modernización y Ecosistema Mobile",
+        imagen: "assets/img/logo-ids.webp",
+        tecnologias: "Android Nativo (Kotlin/Java) & Flutter",
+        descripcion: "Participé activamente en la reestructuración de la capa de datos, ejecutando la migración a Retrofit y optimizando el patrón Repository bajo supervisión técnica. Me encargué de la refactorización de lógica de negocio y la limpieza de deuda técnica en modelos de datos. Asimismo, me integré al desarrollo multiplataforma con Flutter, profesionalizando mi flujo de trabajo en equipos Scrum.",
+        empresa: "IDS Comercial (Proyectos Internos)",
+        link: "" 
+    },
+    {
+        titulo: "MedIme: Mi Primer Paso en Android",
+        imagen: "assets/img/no_image.png", 
+        tecnologias: "Java, Android SDK (Native)",
+        descripcion: "Mi primer acercamiento al desarrollo móvil hace 3 años. Un proyecto fundamental que representa el inicio de mi carrera, donde exploré el manejo de Activities y componentes básicos de Android. Aunque carece de las arquitecturas limpias que utilizo hoy (como MVVM o MVP), es el testimonio de mi evolución técnica y mi capacidad de aprendizaje autodidacta.",
+        empresa: "Iniciación",
+        link: "https://github.com/Montdroud52468/MedIme.git"
+    },
+];
+
+/*=============== CARGAR PROYECTOS ===============*/
+function cargarProyectos() {
+    const projectsContainer = document.getElementById('projects');
+    if (!projectsContainer) return;
+
+    proyectos.forEach(proj => {
+        const article = document.createElement('article');
+        article.className = 'projects__card';
+
+        // Lógica del botón: Si no hay link, el botón no se muestra
+        const linkButton = proj.link 
+            ? `<a href="${proj.link}" target="_blank" class="projects__button button button__small">
+                   <i class="ri-link"></i> Ver Código
+               </a>`
+            : `<span class="projects__button button button__small" style="opacity: 0.5; cursor: not-allowed; filter: grayscale(1);">
+                   <i class="ri-lock-line"></i> Privado
+               </span>`;
+
+        article.innerHTML = `
+            <h3 class="projects__description">${proj.titulo}</h3>
+            <img src="${proj.imagen}" alt="${proj.titulo}" class="projects__img">
+            
+            <div class="projects__modal">
+                <div>
+                    <span class="projects__subtitle">${proj.tecnologias}</span>
+                    <p class="projects__subtitle">${proj.descripcion}</p>
+                    <span class="projects__subtitle"><b>Origen:</b> ${proj.empresa}</span>
+                    <div style="margin-top: 1rem;">
+                        ${linkButton}
+                    </div>
+                </div>
+            </div>
+        `;
+        projectsContainer.appendChild(article);
+    });
+}
+
+// Asegúrate de llamar a la función al cargar el DOM
+document.addEventListener('DOMContentLoaded', () => {
+    cargarCertificados();
+    cargarProyectos();
+});
+
 // Ejecutar al cargar la página
 document.addEventListener('DOMContentLoaded', cargarCertificados);
 
